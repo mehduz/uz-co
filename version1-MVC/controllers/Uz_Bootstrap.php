@@ -1,5 +1,5 @@
 <?php
-
+// commentaire UZ
 abstract class Uz_Bootstrap{
 
 	protected static $application_namespace;
