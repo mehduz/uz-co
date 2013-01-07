@@ -16,10 +16,10 @@ abstract class Uz_Bootstrap{
 		
 		//Le reste se calcule
 		$current_file=__FILE__;
-		$walking=explode('/',$current_file);
-		$file=array_pop($walking);
-		$path=implode('/',$walking);
-		static::$framework_namespace=$namespace;
+		$walking=explode('/',$current_file); /*retourne un tableau de chaines*/
+		$file=array_pop($walking); /*retourne la derniere valeur du tableau, et la retire*/
+		$path=implode('/',$walking); /*créer une chaine avec le séparateur '/'*/
+		static::$framework_namespace=$namespace; /*attention il faut instancier cette variable*/
 		static::$framework_path=$path;
 	}
 
@@ -48,7 +48,6 @@ abstract class Uz_Bootstrap{
 		Uz_Mapper_Generic::init(static::configureDb());
 		
 	}
-	
 	protected abstract function check();
 	protected abstract function configureDb();
 	protected abstract function error();		
